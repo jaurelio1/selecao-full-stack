@@ -1,0 +1,10 @@
+.logo-beeteller{
+    display: flex;
+    flex-direction: row;    
+}
+
+.logo-beeteller img{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+}

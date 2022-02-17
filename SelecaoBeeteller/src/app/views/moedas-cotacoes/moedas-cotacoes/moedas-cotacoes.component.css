@@ -1,0 +1,91 @@
+@media (max-width: 1170px){
+    .moedas{
+        width: 1170px;
+        height: 271px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        position: absolute;
+        left: 136px;
+        top: 123px;
+    }
+    
+    .cards{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    
+        position: static;
+        width: 1170px;
+        height: 189px;
+        left: 0px;
+        top: 82px;
+    
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        margin: 40px 0px;    
+    }
+    
+    .headMoedas{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px;
+    
+        position: static;
+        width: 1170px;
+        height: 42px;
+        left: 0px;
+        top: 0px;
+    
+        flex: none;
+        order: 0;
+        align-self: stretch;
+        flex-grow: 0;
+        margin: 40px 0px;
+    }
+    
+    .frame4{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0px;
+    
+        position: static;
+        width: 321px;
+        height: 141px;
+        left: 24px;
+        top: 24px;
+    
+        flex: none;
+        order: 0;
+        align-self: stretch;
+        flex-grow: 0;
+        margin: 10px 10px;
+    
+        box-shadow: 2px 2px #000000;
+    }
+    
+    .frame2{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+    
+        position: static;
+        width: 116px;
+        height: 141px;
+        left: 0px;
+        top: 0px;
+    
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        margin: 0px 0px;
+    }
+
+}
+

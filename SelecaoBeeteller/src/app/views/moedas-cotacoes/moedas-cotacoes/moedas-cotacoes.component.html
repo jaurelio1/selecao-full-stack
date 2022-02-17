@@ -1,29 +1,33 @@
 <div class="moedas">
-    <h3>Moedas</h3>
+    <div class="headMoedas">
+        <span><b style="font-size: 36px;">Moedas</b></span>
+    </div>    
     <div class="cards">
-        <p-card>
-            <div class="cardIconBRLUSD">
-                <span>BRL/USD</span>
-                <i class="pi pi-dollar"></i>
+        <p-card class="frame4">
+            <div class="frame2">
+                <span style="font-size: 21px;">BRL/USD</span>            
+                <span style="font-size: 21px;">R$<b style="font-size: 29px;">{{valorRealDolar}}</b></span>
+                <span style="font-size: 14px;">Dolar Turismo</span>
             </div>
-            <span>R$<b>{{valorRealDolar}}</b></span>
-            <span></span>
+            <i class="pi pi-dolar"></i>           
         </p-card>
-        <p-card>
-            <div class="cardIconBTCEUR">
-                <span>BTC/EUR</span>
-                <i class="pi pi-dollar"></i>
+        <p-card class="frame4">            
+            <div class="frame2">
+                <span style="font-size: 21px;">BTC/EUR</span>
+                <span style="font-size: 21px;">R$<b style="font-size: 29px;">{{valorBtcEuro}}</b></span>
             </div>
-            <span>R$<b>{{valorBtcEuro}}</b></span>
-            <span></span>
         </p-card>
-        <p-card>
-            <div class="cardIcon">
-                <span>BTC/USD</span>
-                <i class="pi pi-dollar"></i>
-            </div>
-            <span>R$<b>{{valorBtcDolar}}</b></span>
-            <span></span>
+        <p-card class="frame4">
+            <div class="frame2">
+                <span style="font-size: 21px;">BTC/USD</span>
+                <span style="font-size: 21px;">R$<b style="font-size: 29px;">{{valorBtcDolar}}</b></span>
+            </div> 
         </p-card>
+
+    </div>    
+</div>
+<div>
+    <div class="headCotacoes">
+        
     </div>
 </div>

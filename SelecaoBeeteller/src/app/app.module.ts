@@ -8,10 +8,12 @@ import { AppComponent } from './app.component';
 import { PRIMENG_IMPORTS } from './shared/primeng-imports';
 import { MoedasCotacoesModule } from './views/moedas-cotacoes/moedas-cotacoes.module';
 import { MoedasCotacoesComponent } from './views/moedas-cotacoes/moedas-cotacoes/moedas-cotacoes.component';
+import { MenuComponent } from './views/menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
