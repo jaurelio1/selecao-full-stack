@@ -1,40 +1,88 @@
-<div class="moedas">
-    <div class="headMoedas">
-        <span><b style="font-size: 21px;">Moedas</b></span>
-        <i class="pi pi-refresh"></i>
+<div class="cotacoes">
+    <div class="moedas">
+        <div class="headMoedas">
+            <span class="cotacoes-letra">Moedas</span>
+            <i class="pi pi-refresh"></i>
+        </div>
+        <div class="cards">
+            <div class="coin">
+                <div class="frame4">
+                    <div class="frame2">
+                        <span style="font-size: 21px;">BRL/USD</span>
+                        <span style="font-size: 21px;">R$<b style="font-size: 29px;">{{valorRealDolar}}</b></span>
+                        <span style="font-size: 14px;">Dolar Turismo</span>
+                    </div>
+                    <div class="bold">
+                        <i class="pi pi-dollar"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="coin">
+                <div class="frame4">
+                    <div class="frame2">
+                        <span style="font-size: 21px;">BTC/EUR</span>
+                        <span style="font-size: 21px;">R$<b style="font-size: 29px;">{{valorBtcEuro}}</b></span>
+                    </div>
+                    <div class="bold">
+                        <img src="../../../../assets/layout/images/bitcoin.png" alt="bitcoin" />
+                    </div>
+                </div>
+            </div>
+            <div class="coin">
+                <div class="frame4">
+                    <div class="frame2">
+                        <span style="font-size: 21px;">BTC/USD</span>
+                        <span style="font-size: 21px;">R$<b style="font-size: 29px;">{{valorBtcDolar}}</b></span>
+                    </div>
+                    <div class="bold">
+                        <img src="../../../../assets/layout/images/bitcoin.png" alt="bitcoin" />
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="cards">
-        <div class="coin">
-            <div class="frame4">
-                <div class="frame2">
-                    <span style="font-size: 21px;">BRL/USD</span>
-                    <span style="font-size: 21px;">R$<b style="font-size: 29px;">{{valorRealDolar}}</b></span>
-                    <span style="font-size: 14px;">Dolar Turismo</span>
-                </div>
-                <div class="bold">
-                    <i class="pi pi-dollar"></i>
-                </div>
+    <div class="listaCotacoes">
+        <div class="headCotacoes">
+            <span class="cotacoes-letra">Cotações</span>
+            <div class="moeda-cotacoes">
+                <span>{{moedaSelecionada.value}}</span>
+                <i class="pi pi-chevron-down"></i>
             </div>
         </div>
-        <div class="coin">
-            <div class="frame4">
-                <div class="frame2">
-                    <span style="font-size: 21px;">BTC/EUR</span>
-                    <span style="font-size: 21px;">R$<b style="font-size: 29px;">{{valorBtcEuro}}</b></span>
+        <div class="cabecalho">
+            <span>Moeda</span>
+            <div class="frame28">
+                <div class="cabecalho-maxmin">
+                    <span>Mínima</span>
+                    <i class="pi pi-chevron-down"></i>
                 </div>
-                <div class="bold">
-                    <img src="../../../../assets/layout/images/bitcoin.png" alt="bitcoin" />
+                <div class="cabecalho-maxmin">
+                    <span>Máxima</span>
+                    <i class="pi pi-chevron-down"></i>
                 </div>
             </div>
+            <div class="cabecalho-variacao">
+                <span>Variação</span>
+                <i class="pi pi-chevron-down"></i>
+            </div>
         </div>
-        <div class="coin">
-            <div class="frame4">
-                <div class="frame2">
-                    <span style="font-size: 21px;">BTC/USD</span>
-                    <span style="font-size: 21px;">R$<b style="font-size: 29px;">{{valorBtcDolar}}</b></span>
+        <div class="cards-cotacoes" *ngFor="let card of cards">
+            <div class="card-cotacoes">
+                <div class="cotacoes-moeda-data">
+                    <div class="bold-cotacoes">
+                        <i class="pi pi-dollar"></i>
+                    </div>
+                    <div class="frame8">
+                        <span>{{card.moeda}}</span>
+                        <span style="font-size: 14px;">{{card.data}}</span>
+                    </div>
                 </div>
-                <div class="bold">
-                    <img src="../../../../assets/layout/images/bitcoin.png" alt="bitcoin" />
+                <div class="frame11">
+                    <span>{{card.minima}}</span>
+                    <span>{{card.maxima}}</span>
+                </div>
+                <div class="variacao">
+                    <span>{{card.variacao}}%</span>
                 </div>
             </div>
         </div>
