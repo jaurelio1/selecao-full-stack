@@ -44,10 +44,18 @@
     <div class="listaCotacoes">
         <div class="headCotacoes">
             <span class="cotacoes-letra">Cotações</span>
-            <div class="moeda-cotacoes">
+            <div class="coin-btn">
                 <span>{{moedaSelecionada.value}}</span>
-                <i class="pi pi-chevron-down"></i>
+                <div class="dropdown">
+                    <i (click)="showDropDown()" class="dropbtn pi pi-chevron-down"></i>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a (click)="changeToDolar()">Dolar Americano</a>
+                        <a (click)="changeToEuro()">Euro</a>
+                        <a (click)="changeToBitcoin()">Bitcoin</a>
+                    </div>
+                </div>
             </div>
+
         </div>
         <div class="cabecalho">
             <span>Moeda</span>
@@ -69,8 +77,11 @@
         <div class="cards-cotacoes" *ngFor="let card of cards">
             <div class="card-cotacoes">
                 <div class="cotacoes-moeda-data">
-                    <div class="bold-cotacoes">
+                    <div *ngIf="selecionarDolarAmericano()" class="bold-cotacoes">
                         <i class="pi pi-dollar"></i>
+                    </div>
+                    <div *ngIf="!selecionarDolarAmericano()" class="bold-cotacoes">
+                        <img src="../../../../assets/layout/images/bitcoin.png" alt="bitcoin" />
                     </div>
                     <div class="frame8">
                         <span>{{card.moeda}}</span>
