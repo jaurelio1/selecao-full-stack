@@ -71,7 +71,7 @@
             </div>
             <div class="cabecalho-variacao">
                 <span>Variação</span>
-                <i class="pi pi-chevron-down"></i>
+                <i (click)="sortByPctChange()" class="pi pi-chevron-down"></i>
             </div>
         </div>
         <div class="cards-cotacoes" *ngFor="let card of cards">

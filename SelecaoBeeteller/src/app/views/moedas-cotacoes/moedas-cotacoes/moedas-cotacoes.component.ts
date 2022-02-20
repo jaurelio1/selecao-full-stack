@@ -18,6 +18,8 @@ export class MoedasCotacoesComponent implements OnInit {
   valorBtcDolar: number = 0.0;
   valorBtcEuro: number = 0.0;
 
+  alreadyClickedPctChange: boolean = false
+
   moedas: SelectItem[] = [];
 
   moedaSelecionada: SelectItem = { label: 'USD', value: 'Dolar Americano' };
@@ -77,6 +79,17 @@ export class MoedasCotacoesComponent implements OnInit {
   changeToBitcoin() {
     if (this.moedaSelecionada.value !== "Bitcoin") {
       this.moedaSelecionada = { label: 'Btn', value: 'Bitcoin' };
+    }
+  }
+
+  sortByPctChange(){
+    if(this.alreadyClickedPctChange === true){
+      this.cards = this.cards.sort((a,b) => b.variacao - a.variacao);
+      this.alreadyClickedPctChange = false
+    }
+    else{
+      this.cards = this.cards.sort((a,b) => a.variacao - b.variacao);
+      this.alreadyClickedPctChange = true;
     }
   }
 }
