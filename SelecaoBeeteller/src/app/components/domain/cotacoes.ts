@@ -1,7 +1,7 @@
-export class Cotacao{
+export class Cotacoes{
     moeda: string;
-    data: string;
     minima: number;
     maxima: number;
     variacao: number;
+    data: string;
 }

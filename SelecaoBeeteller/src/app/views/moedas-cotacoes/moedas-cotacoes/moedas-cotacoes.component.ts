@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
-import { Cotacao } from 'src/app/components/domain/cotacoes';
+import { Cotacoes } from 'src/app/components/domain/cotacoes';
+import { MoedasCotacoesService } from '../moedas-cotacoes.service';
 
 interface Moeda {
   name: string,
@@ -14,9 +15,9 @@ interface Moeda {
 })
 export class MoedasCotacoesComponent implements OnInit {
 
-  valorRealDolar: number = 0.0;
-  valorBtcDolar: number = 0.0;
-  valorBtcEuro: number = 0.0;
+  valorRealDolar: string = "0";
+  valorBtcDolar: string = "0";
+  valorBtcEuro: string = "0";
 
   alreadyClickedPctChange: boolean = false
 
@@ -24,9 +25,9 @@ export class MoedasCotacoesComponent implements OnInit {
 
   moedaSelecionada: SelectItem = { label: 'USD', value: 'Dolar Americano' };
 
-  cards: Cotacao[];
+  cards: Cotacoes[];
 
-  constructor() {
+  constructor(private serviceMoeda: MoedasCotacoesService) {
     this.moedas = [
       { label: 'USD', value: 'Dolar Americano' },
       { label: 'EUR', value: 'Euro' },
@@ -41,7 +42,18 @@ export class MoedasCotacoesComponent implements OnInit {
 
   }
 
+  getUSDBRL(){
+    this.serviceMoeda.getUSDBRL().pipe().subscribe(res =>{
+      const resposta = JSON.stringify(res);
+      const bid = resposta.slice(resposta.indexOf("bid")+6, resposta.indexOf("bid")+12);
+      
+      this.valorRealDolar = bid
+    });
+  }
+
   ngOnInit(): void {
+    this.getUSDBRL();
+
     window.onclick = function (event) {
       if (!event.target.matches('.dropbtn')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
