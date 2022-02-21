@@ -58,13 +58,22 @@ De preferência se você tiver domínio, esperamos ver o front-end em Angular ou
 * Alcance dos objetivos propostos
 * Adaptação mobile (layout responsivo)
 
-## Instruções para rodar o projeto
+## Instruções para rodar o projeto(Informações do programador)
 A versão mais atualizada do projeto na branch conectionBackEnd(erro não percebido na hora de digitar a branch)
+
 No back-end
 * É necessário primeiramente ter na máquina local Java 1.8 e maven(@3.6.0) instalados;
 * Já com o projeto na sua IDE, no diretório onde contem o arquivo mvnw, rode o comando "mvn clean install -DskipTests";
 * Após executar o comando, que irá dar um build e criar um executável do código fonte, o programa estará pronto para ser executado.
+
 No front-end
 * É necessario primeiramente ter na máquina local o npm(@6.14.6) diretamente ou a nvm;
 * Com o projeto em mãos, exclua a pasta node_modules e o arquivo package-lock.json e rode o comando npm install, para instalar todas as dependências necessárias;
 * Após a exercutar o comando, rode o programa com o comando npm start.
+
+## Desafios
+Meu maior desafio foi a quantidade coisas que necessitei realizar no período de realização da seleção, pois ainda estou terminando meu curso superior cujo necessitar concluir minha monografia, trabalhos da universidades e trabalhos de uma outra empresa. Posso citar também o tempo que eu tinha trabalhado com web, necessitando relembrar e aprender certas coisas. Tive problemas na criação da tela de login que nunca trabalhei na área de autenticação, por isso não consegui realizar a tempo. Outro problema foi a obtenção dos dados da API externa, onde algumas requisições não trouxeram as informações da forma correta para se obter as informações necessárias. Houve também problemas na minha máquina que não estava reconhecendo alguns imports do angular(como o CommonModule) impossibilitando a utilização de funções que me ajudariam na realização do projeto.
+
+## Considerações finais
+Foi um grande desafio a realização dessa seleção onde tive que me virar nos 30 para poder entregar aquilo que eu tinha capacidade de fazer. A cada dia me senti desafiado por ter que aprender coisas novas e me aprimorar como programador, me sentindo assim empolgado, conseguindo trabalhar em uma média de 11 horas por durante o período da seleção. Agradeço pela oportunidade de aprender coisas e espero fazer parte da Beeteller.
+
