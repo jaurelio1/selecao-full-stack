@@ -57,3 +57,14 @@ De preferência se você tiver domínio, esperamos ver o front-end em Angular ou
 * Organização, semântica, estrutura, legibilidade, manutenibilidade do seu código
 * Alcance dos objetivos propostos
 * Adaptação mobile (layout responsivo)
+
+## Instruções para rodar o projeto
+A versão mais atualizada do projeto na branch conectionBackEnd(erro não percebido na hora de digitar a branch)
+No back-end
+* É necessário primeiramente ter na máquina local Java 1.8 e maven(@3.6.0) instalados;
+* Já com o projeto na sua IDE, no diretório onde contem o arquivo mvnw, rode o comando "mvn clean install -DskipTests";
+* Após executar o comando, que irá dar um build e criar um executável do código fonte, o programa estará pronto para ser executado.
+No front-end
+* É necessario primeiramente ter na máquina local o npm(@6.14.6) diretamente ou a nvm;
+* Com o projeto em mãos, exclua a pasta node_modules e o arquivo package-lock.json e rode o comando npm install, para instalar todas as dependências necessárias;
+* Após a exercutar o comando, rode o programa com o comando npm start.
