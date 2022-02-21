@@ -19,8 +19,18 @@ public class MoedasCotacoesResource {
     private final MoedasCotacoesService service;
 
     @GetMapping("/buscar-moedas-usd-brl")
-    public ResponseEntity<Coin> getUsdBrlLastTenDays() throws Exception {
+    public ResponseEntity<Coin> getUsdBrl() throws Exception {
         return ResponseEntity.ok(service.getUSDBRLTemplate());
+    }
+
+    @GetMapping("/buscar-moedas-btc-usd")
+    public ResponseEntity<Coin> getBtcUsd() throws Exception {
+        return ResponseEntity.ok(service.getBTCUSDTemplate());
+    }
+
+    @GetMapping("/buscar-moedas-btc-eur")
+    public ResponseEntity<Coin> getBtcEur() throws Exception {
+        return ResponseEntity.ok(service.getBTCEURTemplate());
     }
 
 }
