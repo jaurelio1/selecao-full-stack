@@ -2,14 +2,14 @@
     <div class="moedas">
         <div class="headMoedas">
             <span class="cotacoes-letra">Moedas</span>
-            <i class="pi pi-refresh"></i>
+            <i (click)="refresh()" class="pi pi-refresh"></i>
         </div>
         <div class="cards">
             <div class="coin">
                 <div class="frame4">
                     <div class="frame2">
                         <span style="font-size: 21px;">BRL/USD</span>
-                        <span style="font-size: 21px;">R$<b style="font-size: 29px;">{{valorRealDolar}}</b></span>
+                        <span style="font-size: 16px;">R$<b style="font-size: 21px;">{{valorRealDolar}}</b></span>
                         <span style="font-size: 14px;">Dolar Turismo</span>
                     </div>
                     <div class="bold">
@@ -20,8 +20,8 @@
             <div class="coin">
                 <div class="frame4">
                     <div class="frame2">
-                        <span style="font-size: 21px;">BRL/EUR</span>
-                        <span style="font-size: 21px;">R$<b style="font-size: 29px;">{{valorBtcEuro}}</b></span>
+                        <span style="font-size: 21px;">BTC/EUR</span>
+                        <span style="font-size: 16px;">$<b style="font-size: 21px;">{{valorBtcEuro}}</b></span>
                     </div>
                     <div class="bold">
                         <img src="../../../../assets/layout/images/bitcoin.png" alt="bitcoin" />
@@ -31,8 +31,8 @@
             <div class="coin">
                 <div class="frame4">
                     <div class="frame2">
-                        <span style="font-size: 21px;">BRL/BTC</span>
-                        <span style="font-size: 21px;">R$<b style="font-size: 29px;">{{valorBtcDolar}}</b></span>
+                        <span style="font-size: 21px;">BTC/USD</span>
+                        <span style="font-size: 16px;">$<b style="font-size: 21px;">{{valorBtcDolar}}</b></span>
                     </div>
                     <div class="bold">
                         <img src="../../../../assets/layout/images/bitcoin.png" alt="bitcoin" />
@@ -74,26 +74,71 @@
                 <i (click)="sortByPctChange()" class="pi pi-chevron-down"></i>
             </div>
         </div>
-        <div class="cards-cotacoes" *ngFor="let card of cards">
+        <div class="cards-cotacoes">
+            <!-- First Card -->
             <div class="card-cotacoes">
                 <div class="cotacoes-moeda-data">
-                    <div *ngIf="selecionarDolarAmericano()" class="bold-cotacoes">
+                    <div class="bold-cotacoes">
                         <i class="pi pi-dollar"></i>
                     </div>
-                    <div *ngIf="!selecionarDolarAmericano()" class="bold-cotacoes">
+                    <!-- <div *ngIf="!selecionarDolarAmericano()" class="bold-cotacoes">
                         <img src="../../../../assets/layout/images/bitcoin.png" alt="bitcoin" />
-                    </div>
+                    </div> -->
                     <div class="frame8">
-                        <span>{{card.moeda}}</span>
-                        <span style="font-size: 14px;">{{card.data}}</span>
+                        <span>{{getCardByIndex(0).moeda}}</span>
+                        <span style="font-size: 14px;">{{getCardByIndex(0).data}}</span>
                     </div>
                 </div>
                 <div class="frame11">
-                    <span>{{card.minima}}</span>
-                    <span>{{card.maxima}}</span>
+                    <span>{{getCardByIndex(0).minima}}</span>
+                    <span>{{getCardByIndex(0).maxima}}</span>
                 </div>
                 <div class="variacao">
-                    <span>{{card.variacao}}%</span>
+                    <span>{{getCardByIndex(0).variacao}}%</span>
+                </div>
+            </div>
+            <!-- Second Card -->
+            <div class="card-cotacoes">
+                <div class="cotacoes-moeda-data">
+                    <div class="bold-cotacoes">
+                        <i class="pi pi-dollar"></i>
+                    </div>
+                    <!-- <div *ngIf="!selecionarDolarAmericano()" class="bold-cotacoes">
+                        <img src="../../../../assets/layout/images/bitcoin.png" alt="bitcoin" />
+                    </div> -->
+                    <div class="frame8">
+                        <span>{{getCardByIndex(1).moeda}}</span>
+                        <span style="font-size: 14px;">{{getCardByIndex(1).data}}</span>
+                    </div>
+                </div>
+                <div class="frame11">
+                    <span>{{getCardByIndex(1).minima}}</span>
+                    <span>{{getCardByIndex(1).maxima}}</span>
+                </div>
+                <div class="variacao">
+                    <span>{{getCardByIndex(1).variacao}}%</span>
+                </div>
+            </div>
+            <!-- Third Card -->
+            <div class="card-cotacoes">
+                <div class="cotacoes-moeda-data">
+                    <div class="bold-cotacoes">
+                        <i class="pi pi-dollar"></i>
+                    </div>
+                    <!-- <div *ngIf="!selecionarDolarAmericano()" class="bold-cotacoes">
+                        <img src="../../../../assets/layout/images/bitcoin.png" alt="bitcoin" />
+                    </div> -->
+                    <div class="frame8">
+                        <span>{{getCardByIndex(2).moeda}}</span>
+                        <span style="font-size: 14px;">{{getCardByIndex(2).data}}</span>
+                    </div>
+                </div>
+                <div class="frame11">
+                    <span>{{getCardByIndex(2).minima}}</span>
+                    <span>{{getCardByIndex(2).maxima}}</span>
+                </div>
+                <div class="variacao">
+                    <span>{{getCardByIndex(2).variacao}}%</span>
                 </div>
             </div>
         </div>

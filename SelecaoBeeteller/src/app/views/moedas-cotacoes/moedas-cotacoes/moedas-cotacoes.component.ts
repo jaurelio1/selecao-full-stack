@@ -3,11 +3,6 @@ import { SelectItem } from 'primeng/api';
 import { Cotacoes } from 'src/app/components/domain/cotacoes';
 import { MoedasCotacoesService } from '../moedas-cotacoes.service';
 
-interface Moeda {
-  name: string,
-  code: string
-}
-
 @Component({
   selector: 'app-moedas-cotacoes',
   templateUrl: './moedas-cotacoes.component.html',
@@ -42,6 +37,12 @@ export class MoedasCotacoesComponent implements OnInit {
 
   }
 
+  refresh(){
+    this.getUSDBRL();
+    this.getBTCEUR();
+    this.getBTCUSD();
+  }
+
   getUSDBRL(){
     this.serviceMoeda.getUSDBRL().pipe().subscribe(res =>{
       const resposta = JSON.stringify(res);
@@ -51,8 +52,28 @@ export class MoedasCotacoesComponent implements OnInit {
     });
   }
 
+  getBTCUSD(){
+    this.serviceMoeda.getBTCUSD().subscribe(res =>{
+      const resposta = JSON.stringify(res);
+      const bid = resposta.slice(resposta.indexOf("bid")+6, resposta.indexOf("bid")+13);
+
+      this.valorBtcDolar = this.fixResponse(bid)
+    });
+  }
+
+  getBTCEUR(){
+    this.serviceMoeda.getBTCEUR().subscribe(res =>{
+      const resposta = JSON.stringify(res);
+      const bid = resposta.slice(resposta.indexOf("bid")+6, resposta.indexOf("bid")+13);      
+      
+      this.valorBtcEuro = this.fixResponse(bid)     
+    });
+  }
+
   ngOnInit(): void {
     this.getUSDBRL();
+    this.getBTCUSD();
+    this.getBTCEUR();
 
     window.onclick = function (event) {
       if (!event.target.matches('.dropbtn')) {
@@ -103,5 +124,16 @@ export class MoedasCotacoesComponent implements OnInit {
       this.cards = this.cards.sort((a,b) => a.variacao - b.variacao);
       this.alreadyClickedPctChange = true;
     }
+  }
+
+  fixResponse(response: string){
+    if(response.indexOf(",") > 0){
+      return response.slice(0, response.indexOf(",")-1)
+    }
+    return response;
+  }
+
+  getCardByIndex(index: number){
+    return this.cards[index]
   }
 }
